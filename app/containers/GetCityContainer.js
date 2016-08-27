@@ -1,0 +1,43 @@
+var React = require('react');
+var GetCity = require('../components/GetCity');
+var PropTypes = React.PropTypes;
+
+var GetCityContainer = React.createClass({
+    getDefaultProps: function () {
+          return {
+              direction: 'column'
+          };
+      },
+    
+    propTypes: {
+        direction: PropTypes.string
+    },
+    
+    handleUpdateCity: function (e) {
+          this.setState({
+              username: e.target.value
+          });
+      },
+    
+    handleSubmitCity: function () {
+          console.log(this.state.city);
+      },
+    
+    getInitialState: function () {
+          return {
+              city: ''
+          };
+      },
+    
+    render: function () {
+        return (
+          <GetCity 
+            direction={this.props.direction}
+            onSubmitCity={this.handleSubmitCity}
+            onUpdateCity={this.handleUpdateCity}
+            city={this.state.city} />
+        );
+  }
+});
+
+module.exports = GetCityContainer;
