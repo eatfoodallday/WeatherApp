@@ -1,17 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
-function getStyles (props) {
-    return {
-        display: 'flex',
-        flexDirection: props.direction || 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        maxWidth: 300,
-        alignSelf: 'right'
-  };
-}
-
 function Button (props) {
     return (
         <button type='button'
@@ -23,15 +12,26 @@ function Button (props) {
   );
 }
 
-function InputField (props){
-    return(
+function InputField (props) {
+    return (
         <input 
-            className = 'form-control'
-            placeholder = 'Los Angeles, California'
-            onChange = {props.onUpdatecity}
-            type ='text'
-            value = {props.city} />
+            className='form-control'
+            onChange={props.onUpdateCity}
+            placeholder='Los Angeles, California'
+            type='text'
+            value={props.ciy} />
     );
+}
+
+function getStyles (props) {
+    return {
+        display: 'flex',
+        flexDirection: props.direction || 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        maxWidth: 300,
+        alignSelf: 'right'
+  };
 }
 
 function GetCity (props){
@@ -45,8 +45,7 @@ function GetCity (props){
                     Get Weather
             </Button>
         </div>
-    );
-    
+    );   
 }
 
 GetCity.propTypes = {
