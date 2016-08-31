@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var utils = require('../helpers/utils');
 var getDate = utils.getDate;
-var convertTemp = utils.convertTemp;
+var DayItem = require('./DayItem');
 
 var styles = {
   container: {
@@ -14,12 +14,10 @@ var styles = {
     maxWidth: 1200,
     margin: '50px auto'
   },
-  dayContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    margin: 35
+  subheader: {
+    fontSize: 30,
+    color: '#333',
+    fontWeight: 100
   },
   header: {
     fontSize: 65,
@@ -28,26 +26,7 @@ var styles = {
     textAlign: 'center',
     marginTop: 50,
     marginBottom: 30,
-  },
-  subheader: {
-    fontSize: 30,
-    color: '#333',
-    fontWeight: 100
-  },
-  weather: {
-    height: 130
   }
-}
-
-function DayItem (props) {
-    var date = getDate(props.day.dt);
-    var icon = props.day.weather[0].icon;
-    return(
-        <div style={styles.dayContainer} onClick={props.handleClick}>
-            <img style={styles.weather} src={'./app/images/weather-icons/' + icon + '.svg'} alt='Weather' />
-            <h2 style={styles.subheader}>{date}</h2>
-        </div>
-    )
 }
 
 function ForecastUI (props) {

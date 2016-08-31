@@ -32,7 +32,7 @@ var ForecastContainer = React.createClass({
         }.bind(this));
   },
     
-    handleClick: function (weather) {
+    handleClick: function(weather) {
         this.context.router.push ({
             pathname: '/detail/' + this.props.routeParams.city,
             state: {
