@@ -30,7 +30,6 @@ function getStyles (props) {
         justifyContent: 'center',
         alignItems: 'center',
         maxWidth: 300,
-        alignSelf: 'right'
   };
 }
 
